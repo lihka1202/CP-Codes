@@ -14,7 +14,7 @@ int power(int a, int b) {
         }
         a*=a;
         a%=mod;
-        b>>=1;
+        b>>=1; //not touching be here as it constatly decreases
     }
     return res;
 }
