@@ -2,7 +2,7 @@
 using namespace std;
 
 vector<vector<int>> subsets(vector<int>& nums) {
-    unordered_set<vector<int>> sol;
+    vector<vector<int>> sol;
     for(int i = 0 ; i<1<<nums.size(); i+=1) {
         int copy = i;
         vector<int> indiv ={};
@@ -12,8 +12,9 @@ vector<vector<int>> subsets(vector<int>& nums) {
             }
             copy>>=1;
         }
-        sol.insert(indiv);
+        sol.push_back(indiv);
     }
+    return sol;
 }
 
 int main() {
